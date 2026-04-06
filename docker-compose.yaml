@@ -9,14 +9,16 @@ services:
     - mongodb
   user:
     build:
-      dockerfile: user.Dockerfile
+      context: ./user
+      dockerfile: Dockerfile
     image: soumyadevopsspace/user:1.0.0
     container_name: user
     depends_on:
     - redis
   frontend:
     build:
-      dockerfile: frontend.Dockerfile
+      context: ./frontend
+      dockerfile: Dockerfile
     image: soumyadevopsspace/frontend:1.0.0
     container_name: frontend
     depends_on:
