@@ -21,6 +21,8 @@ services:
       dockerfile: Dockerfile
     image: soumyadevopsspace/frontend:1.0.0
     container_name: frontend
+    ports:
+    - "80:80"
     depends_on:
     - catalogue
     - user
