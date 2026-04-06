@@ -1,24 +1,18 @@
 services:
   catalogue:
-    build:
-      context: ./catalogue
-      dockerfile: Dockerfile
+    build: ./catalogue
     image: soumyadevopsspace/catalogue:1.0.0
     container_name: catalogue
     depends_on: 
     - mongodb
   user:
-    build:
-      context: ./user
-      dockerfile: Dockerfile
+    build: ./user
     image: soumyadevopsspace/user:1.0.0
     container_name: user
     depends_on:
     - redis
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    build: ./frontend
     image: soumyadevopsspace/frontend:1.0.0
     container_name: frontend
     ports:
@@ -27,9 +21,7 @@ services:
     - catalogue
     - user
   mongodb:
-    build:
-      context: ./mongodb
-      dockerfile: Dockerfile # It moves to mongodb directory
+    build: ./mongodb # It moves to mongodb directory
     image: soumyadevopsspace/mongodb:1.0.0 # docker build -t soumyadevopsspace/mongodb:1.0.0
     container_name: mongodb
   redis:
