@@ -60,7 +60,7 @@ services:
     image: soumyadevopsspace/mongodb:1.0.0 # docker build -t soumyadevopsspace/mongodb:1.0.0
     container_name: mongodb
     volumes:
-    - mongodb:/data/db
+    - /:/data/db
   redis:
     image: redis:7.0
     container_name: redis
