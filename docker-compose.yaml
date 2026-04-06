@@ -1,14 +1,16 @@
 services:
   catalogue:
     build:
-      dockerfile: catalogue.Dockerfile
+      context: ./catalogue
+      dockerfile: Dockerfile
     image: soumyadevopsspace/catalogue:1.0.0
     container_name: catalogue
     depends_on: 
     - mongodb
   mongodb:
     build:
-      dockerfile: mongodb.Dockerfile # It moves to mongodb directory
+      context: ./mongodb
+      dockerfile: Dockerfile # It moves to mongodb directory
     image: soumyadevopsspace/mongodb:1.0.0 # docker build -t soumyadevopsspace/mongodb:1.0.0
     container_name: mongodb
 
